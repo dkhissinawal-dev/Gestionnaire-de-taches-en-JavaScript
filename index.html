@@ -1,131 +1,121 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gestionnaire de tâches</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header>
-        <h1>Gestionnaire de tâches</h1>
-        <p>Organisez et suivez vos tâches facilement</p>
-    </header>
+  <header>
+    <h1>Gestionnaire de tâches</h1>
+    <p>Organisez et suivez vos tâches facilement</p>
+  </header>
 
-    <main>
-        <section class="statistiques">
-            <h2>Mes statistiques</h2>
-            <div class="statistiques-container">
-                <div class="statistique">
-                    <h3 id="total-taches">0</h3>
-                    <p>Total des tâches</p>
-                </div>
+  <main>
+    <section class="statistiques">
+      <h2>Mes statistiques</h2>
+      <div class="statistiques-container">
+        <div class="statistique">
+          <h3 id="total-taches">0</h3>
+          <p>Total des tâches</p>
+        </div>
 
-                <div class="statistique">
-                    <h3 id="nombre-a-faire">0</h3>
-                    <p>À faire</p>
-                </div>
+        <div class="statistique">
+          <h3 id="nombre-a-faire">0</h3>
+          <p>À faire</p>
+        </div>
 
-                <div class="statistique">
-                    <h3 id="nombre-en-cours">0</h3>
-                    <p>En cours</p>
-                </div>
+        <div class="statistique">
+          <h3 id="nombre-en-cours">0</h3>
+          <p>En cours</p>
+        </div>
 
-                <div class="statistique">
-                    <h3 id="nombre-terminees">0</h3>
-                    <p>Terminées</p>
-                </div>
+        <div class="statistique">
+          <h3 id="nombre-terminees">0</h3>
+          <p>Terminées</p>
+        </div>
 
-                <div class="statistique">
-                    <h3 id="nombre-bloquees">0</h3>
-                    <p>Bloquées</p>
-                </div>
-            </div>
-        </section>
+        <div class="statistique">
+          <h3 id="nombre-bloquees">0</h3>
+          <p>Bloquées</p>
+        </div>
+      </div>
+    </section>
 
-        <section class="formulaire">
-            <h2 id="titre-formulaire">Ajouter une tâche</h2>
-            <form id="form-tache">
-                <div class="champ">
-                    <label for="titre">Titre *</label>
+    <section class="formulaire">
+      <h2 id="titre-formulaire">Ajouter une tâche</h2>
+      <form id="form-tache">
+        <div class="champ">
+          <label for="titre">Titre *</label>
 
-                    <input
-                        type="text"
-                        id="titre"
-                        placeholder="Ex : Apprendre JavaScript"
-                        required
-                      >
-                </div>
+          <input type="text" id="titre" placeholder="Ex : Apprendre JavaScript" required>
+        </div>
 
-                <div class="champ">
-                    <label for="description">Description</label>
-                    <textarea
-                        id="description"
-                        rows="4"
-                        placeholder="Description de la tâche..."
-                    ></textarea>
-                </div>
+        <div class="champ">
+          <label for="description">Description</label>
+          <textarea id="description" rows="4" placeholder="Description de la tâche..."></textarea>
+        </div>
 
-                <div class="champ">
-                    <label for="statut">Statut</label>
-                    <select id="statut">
-                        <option value="à faire">À faire</option>
-                        <option value="en cours">En cours</option>
-                        <option value="terminée">Terminée</option>
-                        <option value="bloquée">Bloquée</option>
-                    </select>
-                </div>
+        <div class="champ">
+          <label for="statut">Statut</label>
+          <select id="statut">
+            <option value="à faire">À faire</option>
+            <option value="en cours">En cours</option>
+            <option value="terminée">Terminée</option>
+            <option value="bloquée">Bloquée</option>
+          </select>
+        </div>
 
 
-                <div class="boutons-formulaire">
-                    <button type="submit" id="bouton-ajouter">
-                        Ajouter une tâche
-                    </button>
+        <div class="boutons-formulaire">
+          <button type="submit" id="bouton-ajouter">
+            Ajouter une tâche
+          </button>
 
-                    <button type="button" id="bouton-annuler" hidden>
-                        Annuler
-                    </button>
-                </div>
-            </form>
+          <button type="button" id="bouton-annuler" hidden>
+            Annuler
+          </button>
+        </div>
+      </form>
 
-            <p id="message-erreur" role="alert"></p>
-        </section>
+      <p id="message-erreur" role="alert"></p>
+    </section>
 
-        <section class="recherche-filtres">
-            <h2>Rechercher et filtrer</h2>
-            <div class="champ">
-                <label for="recherche">Rechercher une tâche</label>
-                <input
-                    type="search"
-                    id="recherche"
-                    placeholder="Rechercher par titre ou description..."
-                  >
-            </div>
+    <section class="recherche-filtres">
+      <h2>Rechercher et filtrer</h2>
+      <div class="champ">
+        <label for="recherche">Rechercher une tâche</label>
+        <input type="search" id="recherche" placeholder="Rechercher par titre ou description...">
+      </div>
 
-            <div class="champ">
-                <label for="filtre-statut">Filtrer par statut</label>
-                <select id="filtre-statut">
-                    <option value="toutes">Toutes les tâches</option>
-                    <option value="à faire">À faire</option>
-                    <option value="en cours">En cours</option>
-                    <option value="terminée">Terminées</option>
-                    <option value="bloquée">Bloquées</option>
-                </select>
-            </div>
-        </section>
+      <div class="champ">
+        <label for="filtre-statut">Filtrer par statut</label>
+        <select id="filtre-statut">
+          <option value="toutes">Toutes les tâches</option>
+          <option value="à faire">À faire</option>
+          <option value="en cours">En cours</option>
+          <option value="terminée">Terminées</option>
+          <option value="bloquée">Bloquées</option>
+        </select>
+      </div>
+    </section>
 
-        <section class="liste-taches">
-            <h2>Mes tâches</h2>
-            <div id="conteneur-taches">
-            </div>
+    <section class="liste-taches">
+      <h2>Mes tâches</h2>
+      <div id="conteneur-taches">
+      </div>
 
-            <p id="message-vide">
-                Aucune tâche pour le moment.
-            </p>
+      <p id="message-vide">
+        Aucune tâche pour le moment.
+      </p>
 
-        </section>
-    </main>
-    <script src="script2.js"></script>
+    </section>
+  </main>
+  <script src="script2.js"></script>
 </body>
+
 </html>
