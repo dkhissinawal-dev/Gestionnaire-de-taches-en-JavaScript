@@ -38,7 +38,6 @@ function ajouter(donnees) {
 
     afficher(donnees);
 
-
 }
 
 function modifier(id, nouvellesDonnees) {
@@ -63,12 +62,24 @@ function supprimer(id) {
     afficher(liste_tache)
 }
 
-function filtrer() {
-
+function filtrer(statut) {
+    if (statut === 'toutes') {
+        afficher(liste_tache)
+        return
+    }
+    const resultat = liste_tache.filter((t) => t.statut === statut)
+    afficher(resultat)
 }
 
-function rechercher() {
 
+function rechercher(texte) {
+    const mot = texte.trim().toLowerCase()
+
+    const resultat = liste_tache.filter((t) =>
+        t.titre.toLowerCase().includes(mot) ||
+        t.description.toLowerCase().includes(mot)
+    )
+    afficher(resultat)
 }
 
 /** Fonctions principales */
