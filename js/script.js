@@ -13,23 +13,31 @@ let liste_tache = []
 
 
 /**Fonctions */
-function afficher(){
-    for (let i=0 ; i<=2; i++){
-      conteneur.createElement('div')
+function afficher(donnees){
+
+    for (doc in donnees){
+       console.log(doc);
+       
+       let div = document.createElement('div');
+       //div.style.backgroundColor = "blue"
+       div.textContent = donnees[doc]
+    
+       conteneur.appendChild(div)
     }
+    
+    //conteneur.textContent = liste_tache
     
 }
 function ajouter(donnees) {
 
     liste_tache.push(donnees)
 
-     for (doc in donnees){
-        let div = document.createElement('div');
-      conteneur.appendChild(div)
-      $('#conteneur-taches div').textContent = donnees[doc]
-    }
+    /// loca set
+      localStorage.setItem('tache', JSON.stringify(liste_tache));
+    let data = JSON.parse(localStorage.getItem('tache'));
 
-    //conteneur.textContent = liste_tache
+    afficher(donnees);
+
 
 }
 
@@ -55,15 +63,15 @@ form.addEventListener("submit", (e) => {
 
     e.preventDefault();
 
-    let donees_form = {
+    let donnees_form = {
         titre: $('#titre').value,
         description: $('#description').value,
         statut: $('#statut').value
     };
 
-    localStorage.setItem('tache', JSON.stringify(donees_form));
-    let data = JSON.parse(localStorage.getItem('tache'));
-    console.log(data);
+    
+    console.log(donnees_form);
+    
 
-    ajouter([data.titre, data.description, data.statut])
+    ajouter(donnees_form)
 })
