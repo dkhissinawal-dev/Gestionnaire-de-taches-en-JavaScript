@@ -53,8 +53,14 @@ function modifier(id, nouvellesDonnees) {
 }
 
 
-function supprimer() {
+function supprimer(id) {
+    const index = liste_tache.findIndex((t) => t.id === id)
+    if (index === -1) return
 
+    liste_tache.splice(index, 1)
+
+    localStorage.setItem('tache', JSON.stringify(liste_tache))
+    afficher(liste_tache)
 }
 
 function filtrer() {
