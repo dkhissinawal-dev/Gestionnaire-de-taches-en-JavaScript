@@ -8,8 +8,8 @@ const $a = (elem) => document.querySelectorAll(elem)
 let form = $('form')
 
 let donees_form = {
-titre: $('#titre'),
-descriptiion: $('description'),
+titre: $('#titre').textContent,
+descriptiion: $('#description'),
 statut: $('#statut')
 };
 
