@@ -1,20 +1,85 @@
-const form = document.querySelector("#form-tache");
-const champTitre = document.querySelector("#titre");
-const champDescription = document.querySelector("#description");
-const champStatut = document.querySelector("#statut");
-const champRecherche = document.querySelector("#recherche");
-const filtreStatut = document.querySelector("#filtre-statut");
-const conteneurTaches = document.querySelector("#conteneur-taches");
-const messageErreur = document.querySelector("#message-erreur");
-const messageVide = document.querySelector("#message-vide");
-const titreFormulaire = document.querySelector("#titre-formulaire");
-const boutonAjouter = document.querySelector("#bouton-ajouter");
-const boutonAnnuler = document.querySelector("#bouton-annuler");
 
-const cleStockage = "taches";
-const couleursStatut = {
-    "à faire": "#2563eb",
-    "en cours": "#f97316",
-    "terminée": "#16a34a",
-    "bloquée": "#dc2626"
-};
+
+/**Données */
+
+const $ = (elem) => document.querySelector(elem)
+const $a = (elem) => document.querySelectorAll(elem)
+
+let form = $('form')
+
+let conteneur = $('#conteneur-taches')
+let liste_tache = []
+
+
+
+/**Fonctions */
+function afficher(donnees){
+
+    for (doc in donnees){
+       console.log(doc);
+       
+       let div = document.createElement('div');
+       //div.style.backgroundColor = "blue"
+       div.textContent = donnees[doc]
+    
+       conteneur.appendChild(div)
+    }
+    
+    //conteneur.textContent = liste_tache
+    
+}
+function ajouter(donnees) {
+
+    liste_tache.push(donnees)
+
+    /// loca set
+      localStorage.setItem('tache', JSON.stringify(liste_tache));
+    let data = JSON.parse(localStorage.getItem('tache'));
+
+    afficher(donnees);
+
+
+}
+
+function modifier(id, nouvellesDonnees) {
+    const index = liste_tache.findIndex((t) => t.id === id)
+    if (index === -1) return
+
+    // modifier anciennes valeurs par nouvelles
+    liste_tache[index] = { ...liste_tache[index], ...nouvellesDonnees }
+
+    localStorage.setItem('tache', JSON.stringify(liste_tache))
+    afficher(liste_tache)
+}
+
+
+function supprimer() {
+
+}
+
+function filtrer() {
+
+}
+
+function rechercher() {
+
+}
+
+/** Fonctions principales */
+
+form.addEventListener("submit", (e) => {
+
+    e.preventDefault();
+
+    let donnees_form = {
+        titre: $('#titre').value,
+        description: $('#description').value,
+        statut: $('#statut').value
+    };
+
+    
+    console.log(donnees_form);
+    
+
+    ajouter(donnees_form)
+})
