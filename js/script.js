@@ -13,13 +13,23 @@ let liste_tache = []
 
 
 /**Fonctions */
-
+function afficher(){
+    for (let i=0 ; i<=2; i++){
+      conteneur.createElement('div')
+    }
+    
+}
 function ajouter(donnees) {
 
     liste_tache.push(donnees)
 
+     for (doc in donnees){
+        let div = document.createElement('div');
+      conteneur.appendChild(div)
+      $('#conteneur-taches div').textContent = donnees[doc]
+    }
 
-    conteneur.textContent = liste_tache
+    //conteneur.textContent = liste_tache
 
 }
 
