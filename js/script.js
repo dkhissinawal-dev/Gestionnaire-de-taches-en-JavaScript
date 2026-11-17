@@ -26,7 +26,9 @@ function afficher(donnees){
        let div = document.createElement('div');
        //div.style.backgroundColor = "blue"
        div.textContent = `${doc} : `+ donnees[doc]
-    
+        if(doc == 'titre'){
+            div.classList.add('border', 'font-weight-bold', 'bg-primary')
+        }
        divconteneur.appendChild(div)
     }
     
