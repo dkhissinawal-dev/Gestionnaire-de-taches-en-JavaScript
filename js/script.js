@@ -7,11 +7,15 @@ const $a = (elem) => document.querySelectorAll(elem)
 
 let form = $('form')
 
+let liste_tache = $('#conteneur-taches')
+
 
 
 /**Fonctions */
 
 function ajouter() {
+
+    
 
 }
 
@@ -45,5 +49,5 @@ statut: $('#statut').value
 
 localStorage.setItem('tache', JSON.stringify(donees_form));
 let data = JSON.parse(localStorage.getItem('tache'));
-console.log(data.titre);
+console.log(data);
 })
