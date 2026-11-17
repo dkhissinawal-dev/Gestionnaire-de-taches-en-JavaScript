@@ -5,12 +5,12 @@
 const $ = (elem) => document.querySelector(elem)
 const $a = (elem) => document.querySelectorAll(elem)
 
-let form = $()
+let form = $(form)
 
 let donees_form = {
-titre: $(''),
-descriptiion: $(''),
-statut: $()
+titre: $('#titre'),
+descriptiion: $('description'),
+statut: $('#statut')
 };
 
 localStorage.setItem('tache', JSON.stringify(donees_form));
@@ -43,4 +43,5 @@ function rechercher{
 
 form.addEventListener("submit", (e)=>
 e.preventDefault()
+
 )
