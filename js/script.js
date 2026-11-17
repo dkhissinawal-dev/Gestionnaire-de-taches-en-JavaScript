@@ -13,7 +13,9 @@ let liste_tache = []
 
 
 /**Fonctions */
-function afficher(donnees){
+function afficher(donnees, divParent){
+
+   
 
     for (doc in donnees){
        console.log(doc);
@@ -22,7 +24,7 @@ function afficher(donnees){
        //div.style.backgroundColor = "blue"
        div.textContent = donnees[doc]
     
-       conteneur.appendChild(div)
+       divParent.appendChild(div)
     }
     
     //conteneur.textContent = liste_tache
@@ -30,13 +32,21 @@ function afficher(donnees){
 }
 function ajouter(donnees) {
 
+     let div1 = document.createElement('div');
+    div1.classList.add('tache');
+    conteneur.appendChild(div1)
+
+    afficher(donnees,div1)
+    conteneur.appendChild(div1)
+    
     liste_tache.push(donnees)
 
     /// loca set
-      localStorage.setItem('tache', JSON.stringify(liste_tache));
+    localStorage.setItem('tache', JSON.stringify(liste_tache));
     let data = JSON.parse(localStorage.getItem('tache'));
 
-    afficher(donnees);
+
+    ;
 
 
 }
