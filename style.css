@@ -1,0 +1,203 @@
+
+
+         /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* EN-TÊTE */
+        header {
+            background-color: #2563eb;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 15px;
+        }
+
+        /* CONTENU PRINCIPAL */
+        main {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        /* TITRES */
+        h2 {
+            margin-bottom: 20px;
+            color: #1e293b;
+        }
+
+        /* STATISTIQUES */
+        .statistiques {
+            margin-bottom: 30px;
+        }
+
+        .statistiques-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .statistique {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .statistique h3 {
+            font-size: 28px;
+            color: #2563eb;
+        }
+
+        .statistique p {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        /* FORMULAIRE */
+        .formulaire,
+        .recherche-filtres,
+        .liste-taches {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .champ {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        /* BOUTONS */
+        .boutons-formulaire {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        #bouton-annuler {
+            background-color: #64748b;
+        }
+
+        #bouton-annuler:hover {
+            background-color: #475569;
+        }
+
+        /* MESSAGES */
+        #message-erreur {
+            margin-top: 12px;
+            color: #dc2626;
+            font-weight: bold;
+        }
+
+        /* RECHERCHE ET FILTRES */
+        .recherche-filtres {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* CARTES DES TÂCHES */
+        #conteneur-taches {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        /* Les cartes seront créées en JavaScript */
+
+        /* MESSAGE LISTE VIDE */
+        #message-vide {
+            text-align: center;
+            color: #64748b;
+            padding: 20px;
+        }
+
+        /* PIED DE PAGE */
+        footer {
+            background-color: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* RESPONSIVE */
+        @media screen and (max-width: 768px) {
+
+            .statistiques-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            #conteneur-taches {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                width: 95%;
+            }
+
+        }
+
+   
