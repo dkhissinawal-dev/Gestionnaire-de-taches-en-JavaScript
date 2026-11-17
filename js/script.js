@@ -5,7 +5,7 @@
 const $ = (elem) => document.querySelector(elem)
 const $a = (elem) => document.querySelectorAll(elem)
 
-let form = $(form)
+let form = $('form')
 
 let donees_form = {
 titre: $('#titre'),
@@ -19,23 +19,23 @@ console.log(data.titre);
 
 /**Fonctions */
 
-function ajouter {
+function ajouter() {
 
 }
 
-function modifier{
+function modifier(){
 
 }
 
-function supprimer{
+function supprimer(){
 
 }
 
-function filtrer {
+function filtrer() {
 
 }
 
-function rechercher{
+function rechercher(){
 
 }
 
