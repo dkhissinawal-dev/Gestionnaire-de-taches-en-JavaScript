@@ -8,9 +8,9 @@ const $a = (elem) => document.querySelectorAll(elem)
 let form = $('form')
 
 let donees_form = {
-titre: $('#titre').textContent,
-descriptiion: $('#description'),
-statut: $('#statut')
+titre: $('#titre').value,
+description: $('#description').value,
+statut: $('#statut').value
 };
 
 localStorage.setItem('tache', JSON.stringify(donees_form));
