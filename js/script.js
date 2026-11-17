@@ -7,15 +7,7 @@ const $a = (elem) => document.querySelectorAll(elem)
 
 let form = $('form')
 
-let donees_form = {
-titre: $('#titre').value,
-description: $('#description').value,
-statut: $('#statut').value
-};
 
-localStorage.setItem('tache', JSON.stringify(donees_form));
-let data = JSON.parse(localStorage.getItem('tache'));
-console.log(data.titre);
 
 /**Fonctions */
 
@@ -41,7 +33,17 @@ function rechercher(){
 
 /** Fonctions principales */
 
-form.addEventListener("submit", (e)=>
-e.preventDefault()
+form.addEventListener("submit", (e)=> {
 
-)
+    e.preventDefault();
+
+    let donees_form = {
+titre: $('#titre').value,
+description: $('#description').value,
+statut: $('#statut').value
+};
+
+localStorage.setItem('tache', JSON.stringify(donees_form));
+let data = JSON.parse(localStorage.getItem('tache'));
+console.log(data.titre);
+})
